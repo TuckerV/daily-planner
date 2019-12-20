@@ -1,0 +1,29 @@
+.jumbotron {
+    height: 10% !important;
+    text-align: center;
+    padding-top: 2%;
+    background-color: skyblue;
+    color: black;
+    border-bottom: solid 10px silver;
+}
+
+.container {
+    width: 960px;
+    max-width: 90%;
+    border: solid 2px silver;
+}
+
+.col-1 {
+    border-right: dotted 2px black;
+}
+
+.hourRow {
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: solid 1px red
+}
+
+.btnSave {
+    color: white;
+    background-color: greenyellow;
+}
