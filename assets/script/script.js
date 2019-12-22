@@ -1,5 +1,6 @@
 var currentDayEl = $("#currentDay");
-var currentHour = moment().hour();
+var now = moment().hour();
+// now = 12;
 var plans;
 currentDay();
 load();
@@ -62,9 +63,8 @@ function load() {
 }
 
 function colorBlocks(element, chosenHour) {
-    var now = moment().hour();
-    // console.log("The time currently is: " + now);
-    // console.log("Time block hour: "+ chosenHour);
+    console.log("The time currently is: " + now);
+    console.log("Time block hour: "+ chosenHour);
     if (chosenHour < now) {
         element.addClass("before");
     } else if (chosenHour > now) {
