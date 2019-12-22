@@ -63,8 +63,8 @@ function load() {
 }
 
 function colorBlocks(element, chosenHour) {
-    console.log("The time currently is: " + now);
-    console.log("Time block hour: "+ chosenHour);
+    // console.log("The time currently is: " + now);
+    // console.log("Time block hour: "+ chosenHour);
     if (chosenHour < now) {
         element.addClass("before");
     } else if (chosenHour > now) {
