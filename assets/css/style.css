@@ -4,23 +4,29 @@
     padding-top: 2%;
     background-color: skyblue;
     color: black;
+    font-family: 'Roboto', sans-serif;
     border-bottom: solid 10px silver;
 }
-
+body {
+    background-color: black;
+}
 .container {
     width: 960px;
     max-width: 90%;
-    border: solid 2px silver;
+    border: solid 3px silver;
+    border-radius: 1%;
 }
 
 .col-1 {
-    border-right: dotted 2px black;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-right: solid 3px silver;
+    text-align: center;
+    background-color: white;
 }
 
 .hourRow {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: solid 1px red
+    border: solid 3px silver;
 }
 
 .btnSave {
@@ -28,3 +34,25 @@
     background-color: greenyellow;
 }
 
+.before {
+    background-color: white;
+    color: black;
+}
+
+.currentHour {
+    background-color: red;
+    color: black;
+}
+
+.after {
+    background-color: greenyellow;
+    color: black;
+}
+
+button {
+    background-color: skyblue !important;
+}
+
+textarea {
+    background-color: transparent;
+}

@@ -3,8 +3,8 @@ var currentHour = moment().hour();
 var plans;
 currentDay();
 load();
-// clearPlans();
 renderHourBlocks();
+colorBlocks();
 
 function currentDay(){
     currentDayEl.text(moment().format('dddd, MMMM DD'));
@@ -37,33 +37,23 @@ function renderCommentSections(hour, text) {
     var commentArea = $("<textarea>");
     commentArea.attr("id", `text-${hour}`);
     commentArea.addClass("w-100 h-100");
+    colorBlocks(commentArea, hour);
     if (text != null) {
         commentArea.val(text);
-        alert("TExt area not null");
-
+        // alert("TExt area not null");
     }
 
     return $("<div>").addClass("col-10 px-0").append(commentArea);
 }
-
-
 
 $(".btnSave").click(function() {
     // alert("Button working");
     var hour = $(this).attr("data-time");
     var text = $(`#text-${hour}`).val();
     var index = parseInt(hour) - 9;
-    alert(index);
+    // alert(index);
     plans[index] = text;
-    alert(text);
-
-
     localStorage.setItem("plans", JSON.stringify(plans));
-    // var comment = $(this).data-time();
-    // alert(comment);
-    // var hourDisplay = $(this).siblings("textarea").attr("id");
-    // localStorage.setItem(hourDisplay, comment);
-    // $(this).siblings("textarea").fadeOut(100).fadeIn(100);
 })
 
 function load() {
@@ -71,6 +61,20 @@ function load() {
         ? JSON.parse(localStorage.getItem("plans")) : new Array(9);
 }
 
+function colorBlocks(element, chosenHour) {
+    var now = moment().hour();
+    // console.log("The time currently is: " + now);
+    // console.log("Time block hour: "+ chosenHour);
+    if (chosenHour < now) {
+        element.addClass("before");
+    } else if (chosenHour > now) {
+        element.addClass("after");
+    } else if (chosenHour === now) {
+        element.addClass("currentHour");
+    }
+}
+
+// for personal use clearing local storage and plans array
 function clearPlans() {
    function empty() {
        plans.length = 0;
