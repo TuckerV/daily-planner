@@ -1,7 +1,7 @@
 .jumbotron {
-    height: 10% !important;
     text-align: center;
     padding-top: 2%;
+    padding-bottom: 0%;
     background-color: skyblue;
     color: black;
     font-family: 'Roboto', sans-serif;
